@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>VertiMask</AssemblyName>
+    <RootNamespace>VertiMask</RootNamespace>
+    <Version>2.23.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <Target Name="KillRunningInstance" BeforeTargets="Build;Rebuild">
+    <Exec Command="taskkill /IM VertiMask.exe /F" IgnoreExitCode="true" StandardOutputImportance="low" StandardErrorImportance="low" />
+  </Target>
+
+</Project>
